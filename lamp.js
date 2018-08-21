@@ -2,9 +2,10 @@
 function Lamp(name){
     Device.call(this, "lamp", name);
     this._basicBright = Lamp.MIN_BRIGHT;
-    
+}
 Lamp.MAX_BRIGT = 100;
 Lamp.MIN_BRIGT = 0;
+
 Lamp.prototype = Object.create(Device.prototype);
 Lamp.prototype.constructor = Lamp;
  
