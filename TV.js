@@ -4,7 +4,7 @@ function TvDevice(name) {
 	this._volume = 25;
 	this._minVolume = 0;
 	this._maxVolume = 100;
-	this._channe = 1;
+	this._channel = 1;
 	this._minChannel = 1;
 	this._maxChannel = 99;
 }
@@ -33,7 +33,7 @@ TvDevice.prototype.decriaseChannel = function() {
       }
    };
 TvDevice.prototype.getVolume = function() {
-      return this.volume;
+      return this._volume;
    };
    TvDevice.prototype.increaseVolume = function() {
       if(this._volume < TvDevice._maxVolume) {
@@ -41,7 +41,7 @@ TvDevice.prototype.getVolume = function() {
       }
    };
    TvDevice.prototype.decriaseVolume = function() {
-      if(this.volume > TvDevice._minVolume) {
-         this.volume--;
+      if(this._volume > TvDevice._minVolume) {
+         this._volume--;
       }
    };
