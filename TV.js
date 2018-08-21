@@ -1,13 +1,16 @@
 "use strict";
 function TvDevice(name) {
-	Device.call(this, "tv", name);
-	this._volume = 25;
-	this._minVolume = 0;
-	this._maxVolume = 100;
-	this._channel = 1;
-	this._minChannel = 1;
-	this._maxChannel = 99;
+   Device.call(this, "tv", name);
+   this._name = name;
+   this._channel = TvDevice.MIN_CHANNEL;
+   this._volume = 25;
 }
+
+   TvDevice.MIN_CHANNEL = 1;
+   TvDevice.MAX_CHANNEL = 99;
+   TvDevice.MIN_VOLUME = 0;
+   TvDevice.MAX_VOLUME = 100;
+
 TvDevice.prototype = Object.create(Device.prototype);
 TvDevice.prototype.constructor = TvDevice;
 
@@ -15,20 +18,20 @@ TvDevice.prototype.getChannel = function() {
 	return this._channel;
 };
 TvDevice.prototype.setChannel = function(channel) {
-      if (channel < TvDevice._minChannel || channel > TvDevice._maxChannel) {
+      if (channel <  TvDevice.MIN_CHANNEL || channel > TvDevice.MAX_CHANNEL) {
          throw new RangeError("Incorrect channel number");
       } else {
          this._channel = channel;
       }
    };
 TvDevice.prototype.increaseChannel = function() {
-      if (this._channel < TvDevice._maxChannel) {
+      if (this._channel < TvDevice.MAX_CHANNEL) {
          this._channel++;
       }
    };
 
 TvDevice.prototype.decriaseChannel = function() {
-      if (this._channel > TvDevice._minChannel) {
+      if (this._channel >  TvDevice.MIN_CHANNEL) {
          this._channel--;
       }
    };
@@ -36,12 +39,12 @@ TvDevice.prototype.getVolume = function() {
       return this._volume;
    };
    TvDevice.prototype.increaseVolume = function() {
-      if(this._volume < TvDevice._maxVolume) {
+      if(this._volume < TvDevice.MAX_VOLUME) {
          this._volume++;
       }
    };
-   TvDevice.prototype.decriaseVolume = function() {
-      if(this._volume > TvDevice._minVolume) {
+   TvDevice.prototype.decreaseVolume = function() {
+      if(this._volume > TvDevice.MIN_VOLUME) {
          this._volume--;
       }
    };
