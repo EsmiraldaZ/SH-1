@@ -18,13 +18,17 @@ Lamp.prototype.setBasicBright = function(value){
     }
     this.isPowered();	
 }
-
+Lamp.prototype.brightSetMax = function () {
+	 this._basicBright = MAX_BRIGHT;
+}
+Lamp.prototype.brightSetMin = function () {
+	this._basicBright = MIN_BRIGHT;
+}
 Lamp.prototype.increaseBright = function(){
 	if(this._basictBright < Lamp.MAX_BRIGT){
 		this._currentBright++;
 	}
 }
-
 Lamp.prototype.decreaseBright = function(){
 	if(this._basicBright > Lamp.MIN_BRIGT){
 		this._basicBright--;
