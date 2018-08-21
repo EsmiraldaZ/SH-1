@@ -11,7 +11,7 @@ Lamp.prototype.constructor = Lamp;
  
 Lamp.prototype.getBasicBright = function(){
 	 return this._basictBright; 
-	
+}
 Lamp.prototype.setBasicBright = function(value){
      if (value >= Lamp.MIN_BRIGHT && value <= Lamp.MAX_BRIGHT) {
         this._power = value;
