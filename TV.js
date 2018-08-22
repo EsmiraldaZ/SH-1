@@ -54,7 +54,7 @@ TvDevice.prototype.setMaxVolume = function() {
 TvDevice.prototype.setMinVolume = function() {
    this._volume = TvDevice.MIN_VOLUME;
 }
-TvDevice.prototype.setMaxChsnnel = function() {
+TvDevice.prototype.setMaxChannel = function() {
    this._channel = TvDevice.MAX_CHANNEL;
 }
 TvDevice.prototype.setMinChannel = function() {
