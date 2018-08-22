@@ -15,13 +15,19 @@ Heater.prototype.fullPower = function () {
 Heater.prototype.halfPower = function () {
 	this._heaterPower = 50;
 };
-Heater.prototype.increaseTemperature = function(){
+Heater.prototype.increaseTemp = function(){
       if (this._temperature < Heater._minTemperature) {
          this._temperature++;
       }
    };
-Heater.prototype.dicreaseTemperature = function(){
+Heater.prototype.dicreaseTemp = function(){
       if (this._temperature > Heater._maxTemperature){
          this._temperature--;
       }
    };
+Heater.prototype.temperatureSetMax = function (temperature){
+	return this._maxTemperature;
+}
+Heater.prototype.temperatureSetMin = function (temperature){
+	return this._minTemperature;
+}

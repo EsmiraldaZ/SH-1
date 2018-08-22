@@ -5,6 +5,7 @@ function Fridge(name) {
 	this._minTemperature = -7;
 	this._maxTemperature = 7;
 	this._temperature = 0;
+ 
 };
 Fridge.prototype = Object.create(Device.prototype); 
 Fridge.prototype.constructor = Fridge;
@@ -27,3 +28,9 @@ Fridge.prototype.decreaseTemp = function() {
          this._temperature --;
       }
    }
+Fridge.prototype.temperatureSetMax = function (temperature){
+	return this._maxTemperature;
+}
+Fridge.prototype.temperatureSetMin = function (temperature){
+	return this._minTemperature;
+}
