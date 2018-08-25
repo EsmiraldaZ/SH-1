@@ -1,16 +1,18 @@
 "use strict";
-function Lamp(name){
-    Device.call(this, "lamp", name);
-    this._basicBright = Lamp.MIN_BRIGHT;
+function Lamp(type, name, device){
+    Device.call(this, type, name);
+	this._light = 50;
+	this._name = name;
+	this.type = type;
 }
-Lamp.MAX_BRIGT = 100;
-Lamp.MIN_BRIGT = 0;
+    Lamp.MAX_BRIGT = 100;
+    Lamp.MIN_BRIGT = 0;
 
 Lamp.prototype = Object.create(Device.prototype);
 Lamp.prototype.constructor = Lamp;
  
-Lamp.prototype.getBasicBright = function(){
-	 return this._basictBright; 
+Lamp.prototype.getlight = function(){
+	 return this._light; 
 }
 Lamp.prototype.setBasicBright = function(value){
      if (value >= Lamp.MIN_BRIGHT && value <= Lamp.MAX_BRIGHT) {
@@ -18,25 +20,21 @@ Lamp.prototype.setBasicBright = function(value){
     }
     this.isPowered();	
 }
-Lamp.prototype.brightSetMax = function () {
-	 this._basicBright = MAX_BRIGHT;
+Lamp.prototype.lightSetMax = function () {
+	 this._light = Lamp.MAX_BRIGHT;
 }
-Lamp.prototype.brightSetMin = function () {
-	this._basicBright = MIN_BRIGHT;
+	
+Lamp.prototype.lightSetMin = function () {
+	this._light = Lamp.MIN_BRIGHT;
+	
 }
 Lamp.prototype.increaseBright = function(){
-	if(this._basictBright < Lamp.MAX_BRIGT){
-		this._currentBright++;
+	if(this._light < Lamp.MAX_BRIGT){
+		this._light++;
 	}
-}
+};
 Lamp.prototype.decreaseBright = function(){
-	if(this._basicBright > Lamp.MIN_BRIGT){
-		this._basicBright--;
+	if(this._light > Lamp.MIN_BRIGT){
+		this._light--;
 	}
-}
-Heater.prototype.lightSetMax = function (temperature){
-	return this.MAX_BRIGT;
-}
-Heater.prototype.lightSetMin = function (temperature){
-	return this.MIN_BRIGT;
 }

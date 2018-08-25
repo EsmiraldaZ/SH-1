@@ -25,7 +25,7 @@ Heater.prototype.dicreaseTemp = function(){
          this._temperature--;
       }
    };
-Heater.prototype.temperatureSetMax = function (temperature){
+Heater.prototype.setTemperatureMax = function (temperature){
 	return this._maxTemperature;
 }
 Heater.prototype.temperatureSetMin = function (temperature){

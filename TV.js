@@ -60,3 +60,4 @@ TvDevice.prototype.setMaxChsnnel = function() {
 TvDevice.prototype.setMinChannel = function() {
    this._channel = TvDevice.MIN_CHANNEL;
 }
+

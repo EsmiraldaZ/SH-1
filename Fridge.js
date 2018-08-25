@@ -10,9 +10,6 @@ function Fridge(name) {
 Fridge.prototype = Object.create(Device.prototype); 
 Fridge.prototype.constructor = Fridge;
 
-Fridge.prototype.on = function() {
-         return this._state = true;
-};
    
 Fridge.prototype.getState = function() {
     return this._state;
