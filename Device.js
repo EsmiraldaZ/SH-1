@@ -21,6 +21,4 @@ function Device (type, name) {
     Device.prototype.getType = function(){
       return this._type;
    };
-   Device.prototype.setPower = function (power) {
-    this._powerValid(power);
-}
+  
